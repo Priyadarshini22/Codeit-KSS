@@ -1,0 +1,17 @@
+def Substring(s):  
+         l=[] 
+         start=0
+         stop=0 
+         max=0 
+         while stop<len(s): 
+           if s[stop] in l: 
+             l.remove(s[start]) 
+             start+=1 
+           else: 
+             l.append(s[stop])  
+             stop+=1 
+           if len(l)>max: 
+             max=len(l)
+         print(max) 
+s=input() 
+Substring(s)
