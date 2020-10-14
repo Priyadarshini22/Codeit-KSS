@@ -1,0 +1,18 @@
+def pairs(arr, n):  
+  k=4
+  temp = [0] * k 
+  for i in range(n): 
+        temp[arr[i] % k]+= 1
+  sum = temp[0] * (temp[0] - 1) / 2; 
+
+  i = 1
+  while(i <= k//2 and i != (k - i) ): 
+        sum += temp[i] * temp[k-i] 
+        i+= 1
+  if( k % 2 == 0 ): 
+        sum += (temp[k//2] * (temp[k//2]-1)/2); 
+      
+  return int(sum)  
+arr = [int(x) for x in input().split()] 
+n = len(arr) 
+print(pairs(arr, n)) 
